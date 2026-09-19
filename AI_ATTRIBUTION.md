@@ -21,7 +21,8 @@
   under `TARGET_DIR`, fail-fast behavior, safer production SSH access, and the
   end-to-end Buildroot/QEMU flow. Source-side and configuration validation,
   the full image build, AArch64 QEMU boot, SSH/SCP checks, syslog verification,
-  and the course `full-test.sh` passed. GitHub Actions validation is pending.
+  and the course `full-test.sh` passed. GitHub Actions run
+  `35456772299` also completed successfully from a clean checkout.
   The student also explained that the first cache-enabled workflow run must
   populate the cache, while subsequent runs can reuse the cached downloads.
 - External code and sources: Course starter files, course Assignment 4 Part 2
