@@ -9,11 +9,16 @@ jobs:
     full-test:
         container: cuaesd/aesd-autotest:24-assignment4-buildroot
         runs-on: self-hosted
-        timeout-minutes: 120
+        timeout-minutes: 240
         steps:
           - uses: actions/checkout@v2
           - name: Checkout submodules
             run: git submodule update --init --recursive
+          - name: Restore Buildroot download cache
+            uses: actions/cache@v4
+            with:
+                path: ~/.dl
+                key: buildroot-downloads-2024.02.13
           - uses: webfactory/ssh-agent@v0.5.3
             with:
                 ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
